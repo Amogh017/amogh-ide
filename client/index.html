@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Amogh IDE — Judge0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+  <!-- Monaco (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.0/min/vs/loader.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Amogh IDE</div>
+    <div class="controls">
+      <select id="language"></select>
+      <select id="theme">
+        <option value="vs-light">Light</option>
+        <option value="vs-dark" selected>Dark</option>
+      </select>
+      <button id="runBtn" class="primary">Run ▶</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="editor-card">
+      <div class="card-header">
+        <span>Editor</span>
+        <span id="status" class="muted">Idle</span>
+      </div>
+      <div id="editor"></div>
+    </section>
+
+    <section class="io-card">
+      <div class="tabs">
+        <button class="tab active" data-tab="stdin">Input</button>
+        <button class="tab" data-tab="stdout">Output</button>
+        <button class="tab" data-tab="stderr">Errors</button>
+      </div>
+      <div class="tabpanes">
+        <textarea id="stdin" class="pane active" placeholder="Type program input (stdin) here..."></textarea>
+        <pre id="stdout" class="pane"></pre>
+        <pre id="stderr" class="pane"></pre>
+      </div>
+      <div class="meta">
+        <span id="metaStatus">—</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Backend: <code>http://localhost:3001</code></span>
+    <span>Powered by Judge0</span>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

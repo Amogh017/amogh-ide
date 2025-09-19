@@ -1,0 +1,14 @@
+﻿# Node
+node_modules/
+server/node_modules/
+client/node_modules/
+
+# Env / secrets
+.env
+server/.env
+
+# Logs & junk
+*.log
+server/server.log
+.DS_Store
+Thumbs.db
